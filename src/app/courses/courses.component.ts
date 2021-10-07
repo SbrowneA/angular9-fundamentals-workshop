@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../shared/services/courses.service';
+import {Component, OnInit} from '@angular/core';
+import {CoursesService} from '../shared/services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -16,11 +16,11 @@ export class CoursesComponent implements OnInit {
 
   courses = null;
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(private coursesService: CoursesService) {
+  }
 
   ngOnInit(): void {
-    this.resetSelectedCourse();
-    this.loadCourses();
+    this.refreshCourses();
   }
 
   resetSelectedCourse() {
@@ -45,19 +45,31 @@ export class CoursesComponent implements OnInit {
   }
 
   saveCourse(course) {
-    if(course.id) {
-      this.coursesService.update(course);
+    if (course.id) {
+      this.coursesService.update(course).subscribe((res) => {
+        console.log(res);
+        this.refreshCourses();
+      });
     } else {
-      this.coursesService.create(course)
-        .subscribe(result => this.loadCourses());
+      this.coursesService.create(course).subscribe((res) => this.refreshCourses());
     }
   }
 
   deleteCourse(courseId) {
-    this.coursesService.delete(courseId);
+    this.coursesService.delete(courseId).subscribe(res => {
+      console.log(res);
+      this.refreshCourses();
+    });
+
+
   }
 
   cancel() {
     this.resetSelectedCourse();
+  }
+
+  refreshCourses() {
+    this.resetSelectedCourse();
+    this.loadCourses();
   }
 }

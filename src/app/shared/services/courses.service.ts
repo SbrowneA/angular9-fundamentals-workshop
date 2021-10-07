@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 const BASE_URL = 'http://localhost:3000/';
 
@@ -25,7 +25,8 @@ export class CoursesService {
     }
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   all() {
     return this.http.get(this.getUrl());
@@ -40,14 +41,17 @@ export class CoursesService {
   }
 
   update(course) {
-    console.log('UDDATE COURSE', course);
+    return this.http.put(this.getUrlById(course.id), course);
   }
 
   delete(courseId) {
-    console.log('DLETE COURSE', courseId);
+    return this.http.delete(this.getUrlById(courseId));
   }
 
   private getUrl() {
     return `${BASE_URL}${this.model}`;
+  }
+  private getUrlById(id) {
+    return `${BASE_URL}${this.model}/${id}`;
   }
 }

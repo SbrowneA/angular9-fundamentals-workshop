@@ -51,7 +51,7 @@ app-root {
 
 mat-toolbar {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
 
@@ -78,16 +78,18 @@ mat-card:not(.dashboard-card) {
   width: 100%;
 }
 
+.courses-containers > * {
+  //background: #777777;
+  width: 49%;
+}
 .courses-containers {
   display: flex;
   justify-content: space-around;
 
   .courses-list {
-    width: 49%;
   }
 
   .course-details {
-    width: 49%;
   }
 }
 
@@ -231,7 +233,7 @@ mat-card-actions {
 
   mat-card {
     box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 
     mat-card-header {
       margin-bottom: 10px;
@@ -341,10 +343,10 @@ mat-card-actions {
 // UI TOOLBAR
 mat-toolbar {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   z-index: 900;
 
-  >.mat-mini-fab {
+  > .mat-mini-fab {
     margin-right: 10px;
   }
 
