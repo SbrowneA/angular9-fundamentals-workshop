@@ -11,11 +11,10 @@ export class CourseDetailsComponent {
 
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
-
   @Input() set course(value) {
     if (value) {
       this.selectedCourse = Object.assign({}, value);
       this.originalTitle = value.title;
     }
-  };
+  }
 }

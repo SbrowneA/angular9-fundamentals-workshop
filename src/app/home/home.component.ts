@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { LessonsService } from '../shared/services/lessons.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { LessonsService } from '../shared/services/lessons.service';
 export class HomeComponent implements OnInit {
   title = 'Hello Workshop';
   currentLesson = null;
-
+  @Input() lessons;
+  @Output() lessonSelected = new EventEmitter();
   // CHALLENGE
   // STEP 01: Create a LessonsList component
   // STEP 02: Create the appropriate inputs and outputs
@@ -24,7 +25,6 @@ export class HomeComponent implements OnInit {
   }
 
   selectLesson(lesson) {
-    console.log('SELECT LESSON FIRED!', lesson);
     this.currentLesson = lesson;
   }
 }
