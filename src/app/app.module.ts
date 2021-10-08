@@ -1,20 +1,21 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MaterialModule } from './material.module';
-import { HomeComponent } from './home/home.component';
-import { CoursesComponent } from './courses/courses.component';
-import { FormsModule } from '@angular/forms';
-import { CoursesService } from './shared/services/courses.service';
-import { LessonsService } from './shared/services/lessons.service';
-import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { CourseDetailsComponent } from './courses/course-details/course-details.component';
-import { LessonsListComponent } from './home/lessons/lessons-list/lessons-list.component';
-import { SelectedLessonComponent } from './home/lessons/selected-lesson/selected-lesson.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MaterialModule} from './material.module';
+import {HomeComponent} from './home/home.component';
+import {CoursesComponent} from './courses/courses.component';
+import {FormsModule} from '@angular/forms';
+import {CoursesService} from './shared/services/courses.service';
+import {LessonsService} from './shared/services/lessons.service';
+import {CoursesListComponent} from './courses/courses-list/courses-list.component';
+import {CourseDetailsComponent} from './courses/course-details/course-details.component';
+import {LessonsListComponent} from './home/lessons/lessons-list/lessons-list.component';
+import {SelectedLessonComponent} from './home/lessons/selected-lesson/selected-lesson.component';
+import {UsersComponent} from './users/users.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { SelectedLessonComponent } from './home/lessons/selected-lesson/selected
     CoursesListComponent,
     CourseDetailsComponent,
     LessonsListComponent,
-    SelectedLessonComponent
+    SelectedLessonComponent,
+    UsersComponent
   ],
   providers: [
     CoursesService,
@@ -40,4 +42,5 @@ import { SelectedLessonComponent } from './home/lessons/selected-lesson/selected
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
